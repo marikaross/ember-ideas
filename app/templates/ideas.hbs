@@ -1,3 +1,14 @@
 <div>
-  <h1>Idea Box</h1>
+  <article class="add-idea">
+    {{input type="text" class="idea-title" placeholder="enter idea title" value=title}}
+    {{input type="text" class="idea-body" placeholder="enter idea body" value=body}}
+    <button class="add-idea-button" {{action "createIdea"}}>Add Idea</button>
+    </article>
+    <hr/>
+  {{#each this.model as |idea|}}  
+    <article class="idea-card">
+      <h3 class="idea-title">{{idea.title}}</h3>
+      <p class="idea-body">{{idea.body}}</p>
+    </article>
+  {{/each}}
 </div>
